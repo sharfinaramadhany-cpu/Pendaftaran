@@ -3,7 +3,7 @@ include 'includes/koneksi.php';
 
 
 $queryProv = $pdo->query("SELECT * FROM provinsi ORDER BY nama_provinsi ASC");
-$dataProvinsi = $queryProv->fetchAll(PDO::FETCH_ASSOC);
+$dataProvinsi = $queryProv->fetchAll(PDO::FETCH_ASSOC); //ambil provinsi
 
 if (isset($_POST['submit'])) {
     
@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
         ':kabkot_id'    => $kabkot_id    
     ]);
     
-    header("Location: index.php"); 
+    header("Location: index.php"); //ttp di halaman yang sama
     exit;
 }
 ?>
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Formulir Pendaftaran Siswa</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
 
@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
         <label>Provinsi</label>
         <select name="provinsi_id" id="pilihProvinsi" required>
             <option value="">-- Pilih Provinsi --</option>
-            <?php foreach ($dataProvinsi as $prov): ?>
+            <?php foreach ($dataProvinsi as $prov): ?><!--perulangan prov-->
                 <option value="<?= $prov['id'] ?>"><?= $prov['nama_provinsi'] ?></option>
             <?php endforeach; ?>
         </select>
@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
                     <td><?= htmlspecialchars($data['telepon']); ?></td>
                     <td><?= htmlspecialchars($data['agama']); ?></td>   
                     <td align="center">
-                        <a href="edit.php?id=<?= $data['id']; ?>" class="btn-edit">Edit</a>
+                        <a href="edit.php?id=<?= $data['id']; ?>" class="btn-edit">Edit</a><!--ngedit klik dari tombol aksi-->
                         <button type="button" onclick="hapusData('hapus.php?id=<?= $data['id']; ?>')" class="btn-delete">Hapus</button>
                     </td>
                 </tr>
