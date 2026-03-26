@@ -1,0 +1,217 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    background-color: #f0f2f5; 
+    color: #333;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+    border: none;
+}
+
+h2 {
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    text-align: left;
+}
+
+
+form label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555555;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea,
+form input[type="file"],
+.search-box {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 6px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+form input:focus, .search-box:focus {
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+
+.inline {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+button[name="submit"] {
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #669afa;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button[name="submit"]:hover {
+    background-color: #536fc9;
+    transform: translateY(-2px); 
+}
+
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa !important; 
+    color: #666666;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #eee;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    padding: 40px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+
+.search-box {
+    width: 100% !important;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 15px;
+    background-color: white;
+    overflow: hidden;
+}
+
+th {
+    background-color: #5291ea !important; 
+    color: white !important;
+    padding: 15px 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    border: none !important; 
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee; 
+    text-align: center;
+    vertical-align: middle; 
+}
+
+.btn-edit, 
+.btn-delete {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    
+    width: 70px !important;
+    height: 32px !important;
+    
+    margin: 0 3px !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+
+a.btn-edit {
+    background-color: #f1b503 !important;
+    color: #fff !important;
+}
+
+
+button.btn-delete {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+}
