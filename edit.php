@@ -1,7 +1,7 @@
 <?php
 include 'includes/koneksi.php'; 
 
-if (!isset($_GET['id'])) {
+if (!isset($_GET['id'])) { //
     header("Location: index.php");
     exit;
 }
@@ -16,7 +16,7 @@ if (!$data) {
     exit; 
 }
 
-$hobiArray = !empty($data['hobi']) ? explode(", ", $data['hobi']) : [];
+$hobiArray = !empty($data['hobi']) ? explode(", ", $data['hobi']) : [];//di kembalikan ke array supaya bisa di edit
 $queryProv = $pdo->query("SELECT * FROM provinsi ORDER BY nama_provinsi ASC");
 $dataProvinsi = $queryProv->fetchAll(PDO::FETCH_ASSOC);
 
@@ -79,7 +79,7 @@ if (isset($_POST['update'])) {
 <head>
     <meta charset="UTF-8">
     <title>Edit Data Siswa</title>
-    <link rel="stylesheet" href="assets/css/editstyle.css?=v2">
+    <link rel="stylesheet" href="assets/css/editstyle.css?=3">
 </head>
 <body>
 
@@ -147,8 +147,8 @@ if (isset($_POST['update'])) {
         <img id="previewBaru" src="#" style="display:none; width:120px; margin-top:10px; border-radius:8px; border: 2px solid #333;">
 
         <div class="btn-group" style="margin-top:20px;">
-            <button type="submit" name="update">UPDATE DATA</button>
-            <a href="index.php" class="btn-cancel" style="text-decoration:none; padding:10px; background:#eee; color:#333; border-radius:5px; margin-left:10px;">Batal</a>
+            <button type="submit" name="update">Update Data</button>
+            <a href="index.php" class="btn-cancel">Batal</a>
         </div>
     </form>
 </div>

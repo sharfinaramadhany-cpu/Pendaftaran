@@ -1,16 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {//cek mtml
     
-    const inputFoto = document.getElementById('inputFotoEdit');
+    const inputFoto = document.getElementById('inputFotoEdit');//ambil elemen preview
     const previewBaru = document.getElementById('previewBaru');
     const previewLama = document.getElementById('previewLama');
 
     if (inputFoto && previewBaru) {
-        inputFoto.onchange = evt => {
+        inputFoto.onchange = evt => {//respon saat di klik
             const [file] = inputFoto.files;
             if (file) {
-                previewBaru.src = URL.createObjectURL(file);
-                previewBaru.style.display = 'block';
-                if (previewLama) previewLama.style.opacity = '0.3';
+                previewBaru.src = URL.createObjectURL(file);//untuk nampilin gambar berupa link pada foto
+                previewBaru.style.display = 'block';//
+                if (previewLama) previewLama.style.opacity = '0.3';//untuk blur foto lama
             }
         }
     }

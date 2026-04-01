@@ -24,8 +24,8 @@ if (isset($_POST['submit'])) {
     $foto = null;
     if (!empty($_FILES['foto']['name'])) {
         $target = "uploads/" . basename($_FILES['foto']['name']);
-        if (!is_dir("uploads")) mkdir("uploads");
-        if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+        if (!is_dir("uploads")) mkdir("uploads");//cek lalu creat
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) { //nampung file foto sementara lalu pindah ke upload
             $foto = $target;
         }
     }
@@ -57,13 +57,13 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Formulir Pendaftaran Siswa</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
 
 <div class="container">
     <h2>Formulir Pendaftaran Siswa</h2>
-    <form id="formPendaftaran" method="POST" enctype="multipart/form-data">
+    <form id="formPendaftaran" method="POST" enctype="multipart/form-data"> <!-- biar bisa upload foto-->
         <label>Nama Calon Siswa</label>
         <input type="text" name="nama" required>
 
@@ -87,12 +87,12 @@ if (isset($_POST['submit'])) {
         <select name="provinsi_id" id="pilihProvinsi" required>
             <option value="">-- Pilih Provinsi --</option>
             <?php foreach ($dataProvinsi as $prov): ?><!--perulangan prov-->
-                <option value="<?= $prov['id'] ?>"><?= $prov['nama_provinsi'] ?></option>
+                <option value="<?= $prov['id'] ?>"><?= $prov['nama_provinsi'] ?></option><!--munculin nama provinsi-->
             <?php endforeach; ?>
         </select>
 
         <label>Kabupaten/Kota</label>
-        <select name="kabkot_id" id="pilihKabkot" disabled required>
+        <select name="kabkot_id" id="pilihKabkot" disabled required> <!-- non aktif kota -->
             <option value="">-- Pilih Kab/Kota --</option>
         </select>
         <label>Alamat Lengkap</label>
@@ -124,11 +124,9 @@ if (isset($_POST['submit'])) {
 
 <div class="container">
     <h2>Data Pendaftaran Siswa</h2>
-    
     <input type="text" id="cariSiswa" class="search-box" placeholder="Cari nama siswa...">
-
     <table class="tabel-data">
-        <thead>
+        <thead> <!-- permudah edit di style -->
             <tr>
                 <th rowspan="2">Nama</th>
                 <th colspan="2">Lahir</th>
@@ -151,7 +149,7 @@ if (isset($_POST['submit'])) {
                 <tr>
                     <td><?= htmlspecialchars($data['nama']); ?></td>
                     <td><?= htmlspecialchars($data['tempatLahir']); ?></td>
-                    <td><?= date("d F Y", strtotime($data['tanggalLahir'])); ?></td>
+                    <td><?= date("d F Y", strtotime($data['tanggalLahir'])); ?></td>x
                     <td><?= htmlspecialchars($data['telepon']); ?></td>
                     <td><?= htmlspecialchars($data['agama']); ?></td>   
                     <td align="center">
@@ -165,7 +163,7 @@ if (isset($_POST['submit'])) {
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="assets/js/script.js"></script>
+<script src="assets/js/script.js?v=2"></script>
 
 </body>
 </html>

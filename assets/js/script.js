@@ -1,22 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {//ngecek html
     
     const inputFoto = document.getElementById('inputFoto');
-    const preview = document.getElementById('preview');
+    const preview = document.getElementById('preview');//ambil elemen input sama preview dari index
     if (inputFoto && preview) {
-        inputFoto.addEventListener('change', evt => {
+        inputFoto.addEventListener('change', evt => {//kerespon saat up
             const [file] = inputFoto.files;
             if (file) {
                 preview.src = URL.createObjectURL(file);
-                preview.style.display = 'block';
+                preview.style.display = 'block';//muncul di halaman
             }
         });
     }
 
-    const selectProvinsi = document.getElementById('pilihProvinsi');
+    const selectProvinsi = document.getElementById('pilihProvinsi');//manggil elemen di html
     const selectKabkot = document.getElementById('pilihKabkot');
 
     if (selectProvinsi && selectKabkot) {
-        selectProvinsi.addEventListener('change', function() {
+        selectProvinsi.addEventListener('change', function() {//respon saat click
             const idProvinsi = this.value;
 
             if (!idProvinsi) {
@@ -27,13 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
             selectKabkot.innerHTML = '<option value="">Memuat data...</option>';
             selectKabkot.disabled = true;
 
-            fetch(`get_kabkot.php?id_prov=${idProvinsi}`)
-                .then(response => response.json())
+            fetch(`get_kabkot.php?id_prov=${idProvinsi}`)//manggil get.kabkot ke js
+                .then(response => response.json())//dan js membaca Json
                 .then(data => {
                     selectKabkot.innerHTML = '<option value="">-- Pilih Kab/Kota --</option>';
-                    
                     data.forEach(kabkot => {
-                        const option = document.createElement('option');
+                        const option = document.createElement('option');//buat elemen
                         option.value = kabkot.id;
                         option.textContent = kabkot.nama_kabkot; 
                         selectKabkot.appendChild(option);
@@ -55,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const notelp = document.querySelector('input[name="notelp"]').value;
             const jk = document.querySelector('input[name="jk"]:checked');
 
-            if (nama.trim().length < 3) {
+            if (nama.trim().length < 3) {//nama kurang dari 3 error
                 e.preventDefault();
-                Swal.fire('Oops!', 'Nama minimal 3 karakter', 'error');
+                Swal.fire('Error!', 'Nama minimal 3 karakter', 'error');
                 return;
             }
 
@@ -77,12 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('cariSiswa');
     if (searchInput) {
         searchInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
+            if (e.key === 'Enter') {//tidak perlu enter stlh mencari
+                e.preventDefault();//menghindari refresh
             }
         });
         searchInput.addEventListener('input', function() {
-            let filter = this.value.toLowerCase();
+            let filter = this.value.toLowerCase();//filter huruf besar kecil
             let rows = document.querySelectorAll('table tbody tr');
 
             rows.forEach(row => {
@@ -102,8 +101,8 @@ function hapusData(url) {
         text: "Data yang dihapus tidak bisa dikembalikan!",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#dc3545',
-        cancelButtonColor: '#6c757d',
+        confirmButtonColor: '#e85765',
+        cancelButtonColor: '#b2b6ba',
         confirmButtonText: 'Ya, Hapus!',
         cancelButtonText: 'Batal'
     }).then((result) => {

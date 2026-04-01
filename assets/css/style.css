@@ -1,15 +1,15 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');/*ambil font di google*/
 
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0; /*jarak kotak*/
 }
 
 body {
     font-family: 'Inter', sans-serif; 
-    background-color: #f0f2f5; 
+    background-color: #c4e8dd; 
     color: #333;
     padding: 40px 20px;
 }
@@ -19,7 +19,7 @@ body {
     margin: 0 auto 30px auto;
     background: #ffffff;
     padding: 30px;
-    border-radius: 12px; 
+    border-radius: 12px;/*lengkungan ujung*/ 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
     border: none;
 }
@@ -28,7 +28,7 @@ h2 {
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 25px;
-    padding-bottom: 15px;
+    padding-bottom: 15px;/*jarak garis*/
     border-bottom: 2px solid #eee;
     text-align: left;
 }
@@ -56,7 +56,7 @@ form input[type="file"],
     font-size: 14px;
     transition: all 0.3s ease;
     outline: none;
-}
+}   
 
 form input:focus, .search-box:focus {
     border-color: #333;
@@ -72,7 +72,7 @@ form input:focus, .search-box:focus {
 button[name="submit"] {
     margin-top: 25px;
     padding: 14px;
-    background-color: #669afa;
+    background-color: #63ad98;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -84,67 +84,45 @@ button[name="submit"] {
 }
 
 button[name="submit"]:hover {
-    background-color: #536fc9;
+    background-color: #6cd6b8;
     transform: translateY(-2px); 
 }
 
-
 table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-top: 10px;
+    border-collapse: separate; 
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid #eee;
 }
 
 th {
-    background-color: #f8f9fa !important; 
-    color: #666666;
-    font-weight: 700;
-    text-align: center;
-    padding: 15px;
-    font-size: 12px;
+    background-color: #63ad98 !important; 
+    color: white !important;
+    padding: 15px 10px;
+    font-size: 13px;
     text-transform: uppercase;
-    border-bottom: 2px solid #eee;
+    border: 1px solid #ddd; 
+}
+
+/* Lengkung sudut kiri atas */
+th:first-child {
+  border-top-left-radius: 10px;
+}
+
+/* Lengkung sudut kanan atas */
+th:last-child {
+  border-top-right-radius: 10px;
 }
 
 td {
-    padding: 15px;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee; 
     text-align: center;
-    border-bottom: 1px solid #eee;
-    font-size: 14px;
+    vertical-align: middle; 
 }
 
-tbody tr:last-child td {
-    border-bottom: none;
-}
-
-tbody tr:hover {
-    background-color: #fcfcfc;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    padding: 40px;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto 30px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
 
 
 
@@ -161,29 +139,7 @@ body {
     border-color: #333;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse; 
-    margin-top: 15px;
-    background-color: white;
-    overflow: hidden;
-}
 
-th {
-    background-color: #5291ea !important; 
-    color: white !important;
-    padding: 15px 10px;
-    font-size: 13px;
-    text-transform: uppercase;
-    border: 1px solid #ddd; 
-}
-
-td {
-    padding: 12px 10px;
-    border-bottom: 1px solid #eee; 
-    text-align: center;
-    vertical-align: middle; 
-}
 
 .btn-edit, 
 .btn-delete {
@@ -206,12 +162,12 @@ td {
 
 
 a.btn-edit {
-    background-color: #f1b503 !important;
+    background-color: #ebc963 !important;
     color: #fff !important;
 }
 
 
 button.btn-delete {
-    background-color: #dc3545 !important;
+    background-color: #ef5968 !important;
     color: #fff !important;
 }
